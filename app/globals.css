@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@theme {
+  /* ============ SPACING SCALE ============ */
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+
+  /* ============ COLOR PRIMITIVES ============ */
+
+  /* Red Ramp (brand primary) */
+  --color-red-50: #FBF8F8;
+  --color-red-100: #F8EFEF;
+  --color-red-200: #EFD4D4;
+  --color-red-300: #E8BFBF;
+  --color-red-400: #DFAAAA;
+  --color-red-500: #D89595;
+  --color-red-600: #D17E7E;
+  --color-red-700: #C86767;
+  --color-red-800: #BF5050;
+  --color-red-900: #B63939;
+
+  /* Orange Ramp */
+  --color-orange-50: #FEF5F2;
+  --color-orange-100: #FDE1DE;
+  --color-orange-200: #FBC7C1;
+  --color-orange-300: #F7A29A;
+  --color-orange-400: #F17468;
+  --color-orange-500: #E64A3B;
+  --color-orange-600: #CC3323;
+  --color-orange-700: #B82D1F;
+  --color-orange-800: #A4271B;
+  --color-orange-900: #902117;
+
+  /* Yellow Ramp */
+  --color-yellow-50: #FFFBEB;
+  --color-yellow-100: #FEF3C7;
+  --color-yellow-200: #FDE58A;
+  --color-yellow-300: #FCD34D;
+  --color-yellow-400: #FBBF24;
+  --color-yellow-500: #F2A60D;
+  --color-yellow-600: #D0850A;
+  --color-yellow-700: #AE6A08;
+  --color-yellow-800: #8C5506;
+  --color-yellow-900: #6A4004;
+
+  /* Gray Ramp (warm) */
+  --color-stone-50: #F2EEEC;
+  --color-stone-100: #E3DCD9;
+  --color-stone-200: #CCC1BC;
+  --color-stone-300: #A89C96;
+  --color-stone-400: #83766F;
+  --color-stone-500: #665A54;
+  --color-stone-600: #4A4440;
+  --color-stone-700: #2E2A26;
+  --color-stone-800: #1A1816;
+  --color-stone-900: #0A0805;
+
+  /* Green Ramp */
+  --color-green-50: #EFFAF3;
+  --color-green-100: #D7F2E1;
+  --color-green-200: #A9E4C1;
+  --color-green-300: #22A35A;
+  --color-green-400: #178048;
+  --color-green-500: #116832;
+  --color-green-600: #0D5228;
+  --color-green-700: #0A401F;
+  --color-green-800: #062E16;
+  --color-green-900: #031C0D;
+
+  /* Blue Ramp */
+  --color-blue-50: #EEF5FF;
+  --color-blue-100: #D9E9FF;
+  --color-blue-200: #B3D3FF;
+  --color-blue-300: #2F7DE0;
+  --color-blue-400: #2464B8;
+  --color-blue-500: #1D4F93;
+  --color-blue-600: #1A3F73;
+  --color-blue-700: #172D53;
+  --color-blue-800: #141B33;
+  --color-blue-900: #0B0A13;
+
+  /* ============ TYPOGRAPHY ============ */
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-plus-jakarta-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Text sizes (line-height built-in as ratio) */
+  --text-display-xl: 2.5rem / 3rem;
+  --text-heading-xl: 1.75rem / 2.25rem;
+  --text-heading-lg: 1.25rem / 1.75rem;
+  --text-body-lg: 1rem / 1.5rem;
+  --text-body-md: 0.875rem / 1.25rem;
+  --text-body-sm: 0.75rem / 1rem;
+  --text-label-md: 0.875rem / 1.25rem;
+  --text-label-sm: 0.75rem / 1rem;
+  --text-button-lg: 0.875rem / 1.25rem;
+  --text-button-sm: 0.75rem / 1rem;
+
+  /* ============ SHADOWS ============ */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-brand-glow: 0 0 16px rgba(216, 64, 64, 0.2);
+}
+
+/* ============ SEMANTIC COLORS (LIGHT MODE) ============ */
+:root {
+  --color-bg: #FFFFFF;
+  --color-surface: #F5F5F5;
+  --color-surface-elevated: #FFFFFF;
+
+  --color-brand: #B63939;
+  --color-brand-hover: #A72222;
+  --color-brand-active: #9A1C1C;
+
+  --color-status-success-bg: #EFFAF3;
+  --color-status-success-text: #116832;
+  --color-status-success-border: #A9E4C1;
+
+  --color-status-warning-bg: #FFFBEB;
+  --color-status-warning-text: #D0850A;
+  --color-status-warning-border: #FDE58A;
+
+  --color-status-danger-bg: #FBF8F8;
+  --color-status-danger-text: #B63939;
+  --color-status-danger-border: #D89595;
+
+  --color-status-info-bg: #EEF5FF;
+  --color-status-info-text: #1A3F73;
+  --color-status-info-border: #B3D3FF;
+
+  --color-border-default: #E8E8E8;
+  --color-border-subtle: #F5F5F5;
+  --color-border-muted: #BFBFBF;
+  --color-border-focus: #B63939;
+
+  --color-text: #1A1816;
+  --color-text-secondary: #665A54;
+  --color-text-tertiary: #A89C96;
+  --color-text-inverse: #FFFFFF;
+  --color-text-brand: #B63939;
+
+  --color-icon: #665A54;
+  --color-icon-brand: #B63939;
+
+  --color-action-destructive: #B63939;
+  --color-action-destructive-hover: #A72222;
+}
+
+/* ============ SEMANTIC COLORS (DARK MODE) ============ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1A1816;
+    --color-surface: #2E2A26;
+    --color-surface-elevated: #3A3531;
+
+    --color-brand: #D89595;
+    --color-brand-hover: #DFAAAA;
+    --color-brand-active: #E8BFBF;
+
+    --color-status-success-bg: #0A401F;
+    --color-status-success-text: #A9E4C1;
+    --color-status-success-border: #116832;
+
+    --color-status-warning-bg: #6A4004;
+    --color-status-warning-text: #FCD34D;
+    --color-status-warning-border: #D0850A;
+
+    --color-status-danger-bg: #2E1A18;
+    --color-status-danger-text: #D89595;
+    --color-status-danger-border: #B63939;
+
+    --color-status-info-bg: #172D53;
+    --color-status-info-text: #B3D3FF;
+    --color-status-info-border: #2F7DE0;
+
+    --color-border-default: #4A4440;
+    --color-border-subtle: #2E2A26;
+    --color-border-muted: #665A54;
+    --color-border-focus: #D89595;
+
+    --color-text: #F2EEEC;
+    --color-text-secondary: #A89C96;
+    --color-text-tertiary: #665A54;
+    --color-text-inverse: #1A1816;
+    --color-text-brand: #D89595;
+
+    --color-icon: #A89C96;
+    --color-icon-brand: #D89595;
+
+    --color-action-destructive: #D89595;
+    --color-action-destructive-hover: #DFAAAA;
+  }
+}
+
+/* ============ APPLY THEME ============ */
+@theme {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --color-muted: var(--color-text-secondary);
+  --color-muted-foreground: var(--color-text-tertiary);
+  --color-border: var(--color-border-default);
+}
+
+body {
+  @apply bg-background text-foreground;
+}
