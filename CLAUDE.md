@@ -49,7 +49,8 @@ Os componentes abaixo estão em `app/components/` e são o design system do proj
 Não estão no código: o card de plano Premium, o `RefreshTimer` e o alternador de tema da sidebar (o modo escuro segue o sistema).
 
 ## Páginas
-- Endereços: palavras curtas em português, minúsculas, sem acento e separadas por hífen (ex.: `/novo-pedido`). A página inicial é `/`. `/preview` mostra os componentes.
+- Endereços: palavras curtas em português, minúsculas, sem acento e separadas por hífen (`/login`, `/cadastro`). A página inicial é `/`. `/preview` mostra os componentes.
+- `/login` (`app/login/`): tela de login, fora do menu, card de 420px no desktop. Blocos em `app/login/_components/` (`LoginHeader`, `LoginForm`, `SignupPrompt`). Ainda não há API: o envio é simulado e o link "Criar Conta" aponta para `/cadastro`, que não existe.
 
 ## Regras de frontend
 
