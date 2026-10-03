@@ -91,6 +91,9 @@ export default function Preview() {
         <Variant label='size="sm"'>
           <Button size="sm" label="Pequeno" />
         </Variant>
+        <Variant label='size="lg"'>
+          <Button size="lg" label="Grande" />
+        </Variant>
         <Variant label="icon">
           <Button
             label="Novo pedido"
@@ -253,6 +256,12 @@ export default function Preview() {
         </Variant>
         <Variant label="active">
           <FilterTab active />
+        </Variant>
+        <Variant label='size="lg"'>
+          <FilterTab size="lg" label="CPF" active />
+        </Variant>
+        <Variant label='size="lg" (default)'>
+          <FilterTab size="lg" label="CNPJ" />
         </Variant>
       </Section>
 

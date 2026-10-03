@@ -29,14 +29,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Quando o design não mostrar como fica o hover de um elemento, defina um hover coerente com o design system, usando as cores e estilos dele.
 - Links de âncora (ex.: "Como funciona" no menu da landing) rolam a página suavemente até a seção, sem que o menu fixo cubra o título da seção.
 - Enquanto um conteúdo carrega, mostre um estado de carregamento com o formato do conteúdo e faça o conteúdo aparecer com transição suave.
-- Respeite a configuração de movimento reduzido do sistema: para quem a ativou, desligue as animações e a rolagem suave.
+- Respeite a configuração de movimento reduzido do sistema: para quem a ativou, desligue as animações e a rolagem suave. Isso já está em `app/globals.css` (regra global); não precisa repetir por componente.
+- Movimento: toda animação usa a mesma duração (150ms) e curva (`cubic-bezier(0.4, 0, 0.2, 1)`, a mesma do `transition-colors duration-150`). Para entrada de conteúdo, trocas de campo e mensagens de erro use a classe `animate-enter` (opacidade + deslocamento, definida em `@theme`). Anime só opacidade e deslocamento, nunca largura, altura ou posição.
 
 ## Componentes base (reutilizáveis)
 Os componentes abaixo estão em `app/components/` e são o design system do projeto, criados a partir do Figma. **Toda tela nova deve usá-los em vez de criar outros iguais.** Se faltar uma variante, adicione-a ao componente existente (objeto de mapeamento) em vez de duplicar. Todos aparecem em `/preview` (`app/preview/page.tsx`); ao criar ou mudar um componente, atualize a `/preview`.
 
-- **Ações e campos:** `Button` (variant `primary|secondary|ghost|danger`, size `md|sm`, `icon`, `disabled`), `IconButton`, `Input` (label, `error`), `MaskedInput` (ver abaixo), `Dropdown`, `Toggle`.
+- **Ações e campos:** `Button` (variant `primary|secondary|ghost|danger`, size `lg|md|sm`, `icon`, `disabled`), `IconButton`, `Input` (label, `error`), `MaskedInput` (ver abaixo), `Dropdown`, `Toggle`.
 - **Indicadores:** `Badge` (tone `neutral|success|warning|danger|info`), `EmptyState`.
-- **Navegação:** `Sidebar` (aceita `children` para os indicadores de plano), `SidebarNavItem`, `PlanUsageCard`, `UpgradeCard`, `Tab`, `FilterTab`, `Pagination`.
+- **Navegação:** `Sidebar` (aceita `children` para os indicadores de plano), `SidebarNavItem`, `PlanUsageCard`, `UpgradeCard`, `Tab`, `FilterTab` (size `sm|lg`), `Pagination`.
 - **Conteúdo:** `PageHeader`, `Table` (colunas e linhas por props), `OrderCard`, `CategoryCard`, `MesaCard`, `AccordionHeader`.
 - **Sobreposições:** `ModalContainer` (só o painel, sem fundo escurecido), `ConfirmationModal`.
 
@@ -46,6 +47,10 @@ Os componentes abaixo estão em `app/components/` e são o design system do proj
 - O erro ("CPF incompleto", "Data inválida" etc.) aparece ao sair do campo ou quando o campo é preenchido por completo; `required` mostra "Campo obrigatório". Para uma nova máscara, adicione-a em `maskConfigs` e a `MaskType`, e mostre-a em `/preview`.
 
 Não estão no código: o card de plano Premium, o `RefreshTimer` e o alternador de tema da sidebar (o modo escuro segue o sistema).
+
+## Páginas
+- Endereços: palavras curtas em português, minúsculas, sem acento e separadas por hífen (`/login`, `/cadastro`). A página inicial é `/`. `/preview` mostra os componentes.
+- `/login` (`app/login/`): tela de login, fora do menu. Blocos em `app/login/_components/` (`LoginHeader`, `LoginForm`, `SignupPrompt`). Ainda não há API: o envio é simulado e o link "Criar Conta" aponta para `/cadastro`, que não existe.
 
 ## Regras de frontend
 
