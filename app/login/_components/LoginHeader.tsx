@@ -10,7 +10,7 @@ export default function LoginHeader({
       <h1 className="font-display text-heading font-semibold text-text-primary">
         Comanda<span className="text-brand-primary">Fácil</span>
       </h1>
-      <p className="text-sm leading-5 text-text-secondary">{subtitle}</p>
+      <p className="text-xs leading-4 text-text-secondary">{subtitle}</p>
     </header>
   );
 }
