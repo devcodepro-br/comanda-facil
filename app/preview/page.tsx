@@ -134,6 +134,9 @@ export default function Preview() {
         <Variant label="disabled" className="w-70">
           <Input label="E-mail" placeholder="Indisponível" disabled />
         </Variant>
+        <Variant label='size="lg"' className="w-70">
+          <Input size="lg" />
+        </Variant>
       </Section>
 
       <Section title="MaskedInput">
