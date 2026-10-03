@@ -221,10 +221,11 @@
   --color-blue-600: #1a3f73;
   --color-blue-700: #152f55;
 
-  /* Raios do Figma: sm 6, md 10, lg 16 */
+  /* Raios do Figma: sm 6, md 10, lg 16, xl 24 */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
 
   /* Tipografia: Display 40/48 e Heading 28/36 (Fraunces). Os demais tamanhos usam a escala padrão. */
   --font-display--font-variation-settings: "SOFT" 0, "WONK" 1;
@@ -250,11 +251,12 @@
   /* Sombras do Figma (shadow/sm e shadow/md) */
   --shadow-sm: 0 2px 6px -1px rgb(20 13 10 / 0.1);
   --shadow-md: 0 8px 16px -2px rgb(20 13 10 / 0.14);
+  --shadow-lg: 0 16px 32px -4px rgb(20 13 10 / 0.18);
 }
 
 @layer base {
   html {
-    scroll-padding-top: calc(var(--spacing) * 20);
+    scroll-padding-top: calc(var(--spacing) * 24);
   }
 
   body {
