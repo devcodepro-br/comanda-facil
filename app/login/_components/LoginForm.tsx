@@ -60,7 +60,7 @@ export default function LoginForm() {
       <div role="group" aria-labelledby="document-type-label" className="flex flex-col gap-1.5">
         <span
           id="document-type-label"
-          className="text-xs font-semibold text-text-secondary"
+          className="text-sm font-semibold text-text-primary"
         >
           Tipo de Documento
         </span>
@@ -82,6 +82,7 @@ export default function LoginForm() {
       <div key={documentType} className="animate-enter">
         <MaskedInput
           mask={documentType}
+          size="lg"
           label="Número do Documento"
           name="document"
           autoComplete="username"
@@ -91,6 +92,7 @@ export default function LoginForm() {
       </div>
 
       <Input
+        size="lg"
         label="Senha"
         name="password"
         type="password"

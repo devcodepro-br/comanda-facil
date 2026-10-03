@@ -35,7 +35,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Componentes base (reutilizáveis)
 Os componentes abaixo estão em `app/components/` e são o design system do projeto, criados a partir do Figma. **Toda tela nova deve usá-los em vez de criar outros iguais.** Se faltar uma variante, adicione-a ao componente existente (objeto de mapeamento) em vez de duplicar. Todos aparecem em `/preview` (`app/preview/page.tsx`); ao criar ou mudar um componente, atualize a `/preview`.
 
-- **Ações e campos:** `Button` (variant `primary|secondary|ghost|danger`, size `lg|md|sm`, `icon`, `disabled`), `IconButton`, `Input` (label, `error`), `MaskedInput` (ver abaixo), `Dropdown`, `Toggle`.
+- **Ações e campos:** `Button` (variant `primary|secondary|ghost|danger`, size `lg|md|sm`, `icon`, `disabled`), `IconButton`, `Input` (label, `error`, size `md|lg`), `MaskedInput` (ver abaixo; aceita o mesmo `size`), `Dropdown`, `Toggle`.
 - **Indicadores:** `Badge` (tone `neutral|success|warning|danger|info`), `EmptyState`.
 - **Navegação:** `Sidebar` (aceita `children` para os indicadores de plano), `SidebarNavItem`, `PlanUsageCard`, `UpgradeCard`, `Tab`, `FilterTab` (size `sm|lg`), `Pagination`.
 - **Conteúdo:** `PageHeader`, `Table` (colunas e linhas por props), `OrderCard`, `CategoryCard`, `MesaCard`, `AccordionHeader`.

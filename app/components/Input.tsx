@@ -5,11 +5,17 @@ interface InputProps extends Omit<ComponentProps<"input">, "size"> {
   label?: string;
   error?: string;
   labelHidden?: boolean;
+  size?: "md" | "lg";
 }
 
-const labelVisibility: Record<"visible" | "hidden", string> = {
-  visible: "text-xs font-semibold text-text-secondary",
-  hidden: "sr-only",
+const labelSizes: Record<NonNullable<InputProps["size"]>, string> = {
+  md: "text-xs font-semibold text-text-secondary",
+  lg: "text-base font-semibold text-text-primary",
+};
+
+const fieldSizes: Record<NonNullable<InputProps["size"]>, string> = {
+  md: "px-3.5 py-3 text-sm leading-5",
+  lg: "px-4.5 py-3.5 text-lg leading-7",
 };
 
 const fieldStates: Record<"default" | "error", string> = {
@@ -21,6 +27,7 @@ export default function Input({
   label = "E-mail",
   error = "",
   labelHidden = false,
+  size = "md",
   placeholder = "Seu email completo...",
   className = "",
   id,
@@ -35,7 +42,7 @@ export default function Input({
     <div className="flex w-full flex-col gap-1.5">
       <label
         htmlFor={inputId}
-        className={labelVisibility[labelHidden ? "hidden" : "visible"]}
+        className={labelHidden ? "sr-only" : labelSizes[size]}
       >
         {label}
       </label>
@@ -44,7 +51,7 @@ export default function Input({
         placeholder={placeholder}
         aria-invalid={hasError}
         aria-describedby={hasError ? errorId : undefined}
-        className={`w-full rounded-md border bg-input px-3.5 py-3 text-sm leading-5 text-text-primary placeholder:text-text-tertiary transition-colors duration-150 focus:border-border-focus focus:ring-1 focus:ring-border-focus focus:outline-none disabled:border-border-subtle disabled:bg-surface disabled:opacity-70 ${fieldStates[hasError ? "error" : "default"]} ${className}`}
+        className={`w-full rounded-md border bg-input text-text-primary placeholder:text-text-tertiary transition-colors duration-150 focus:border-border-focus focus:ring-1 focus:ring-border-focus focus:outline-none disabled:border-border-subtle disabled:bg-surface disabled:opacity-70 ${fieldSizes[size]} ${fieldStates[hasError ? "error" : "default"]} ${className}`}
         {...rest}
       />
       {hasError ? (
