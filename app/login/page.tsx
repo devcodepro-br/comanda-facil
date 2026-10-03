@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <main className="flex flex-1 items-center justify-center p-4 sm:p-8">
-      <div className="flex w-full max-w-105 animate-enter flex-col gap-8 rounded-lg bg-surface p-6 shadow-md sm:p-10">
+      <div className="flex w-full max-w-105 animate-enter flex-col gap-5 rounded-lg bg-surface p-6 shadow-md sm:p-10">
         <LoginHeader />
         <LoginForm />
         <SignupPrompt />
