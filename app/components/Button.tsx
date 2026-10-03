@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
 interface ButtonProps extends ComponentProps<"button"> {
@@ -5,6 +6,8 @@ interface ButtonProps extends ComponentProps<"button"> {
   variant?: "primary" | "secondary" | "ghost" | "danger";
   size?: "lg" | "md" | "sm";
   icon?: ReactNode;
+  // Quando informado, renderiza um link de navegação com o mesmo visual do botão
+  href?: string;
 }
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
@@ -29,16 +32,24 @@ export default function Button({
   variant = "primary",
   size = "md",
   icon,
+  href,
   type = "button",
   className = "",
   ...rest
 }: ButtonProps) {
+  const classes = `inline-flex cursor-pointer items-center justify-center gap-2 rounded-md font-bold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-border-focus disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {icon}
+        {label}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      type={type}
-      className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-md font-bold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-border-focus disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
-      {...rest}
-    >
+    <button type={type} className={classes} {...rest}>
       {icon}
       {label}
     </button>
