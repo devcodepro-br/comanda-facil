@@ -48,7 +48,10 @@ export default function Input({
         {...rest}
       />
       {hasError ? (
-        <p id={errorId} className="text-xs leading-4 text-status-danger-text">
+        <p
+          id={errorId}
+          className="animate-enter text-xs leading-4 text-status-danger-text"
+        >
           {error}
         </p>
       ) : null}
