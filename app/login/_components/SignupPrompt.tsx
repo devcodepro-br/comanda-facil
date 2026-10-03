@@ -12,7 +12,7 @@ export default function SignupPrompt({
   href = "/cadastro",
 }: SignupPromptProps) {
   return (
-    <p className="text-center text-sm leading-5 text-text-secondary">
+    <p className="text-center text-xs leading-4 text-text-secondary">
       {question}{" "}
       <Link
         href={href}

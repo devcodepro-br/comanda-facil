@@ -15,7 +15,7 @@ const labelSizes: Record<NonNullable<InputProps["size"]>, string> = {
 
 const fieldSizes: Record<NonNullable<InputProps["size"]>, string> = {
   md: "px-3.5 py-3 text-sm leading-5",
-  lg: "px-4 py-2.5 text-base leading-6",
+  lg: "px-4 py-3 text-sm leading-5",
 };
 
 const fieldStates: Record<"default" | "error", string> = {
