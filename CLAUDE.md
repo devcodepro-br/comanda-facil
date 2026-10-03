@@ -34,11 +34,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Componentes base (reutilizáveis)
 Os componentes abaixo estão em `app/components/` e são o design system do projeto, criados a partir do Figma. **Toda tela nova deve usá-los em vez de criar outros iguais.** Se faltar uma variante, adicione-a ao componente existente (objeto de mapeamento) em vez de duplicar. Todos aparecem em `/preview` (`app/preview/page.tsx`); ao criar ou mudar um componente, atualize a `/preview`.
 
-- **Ações e campos:** `Button` (variant `primary|secondary|ghost|danger`, size `md|sm`, `icon`, `disabled`), `IconButton`, `Input` (label, `error`), `Dropdown`, `Toggle`.
+- **Ações e campos:** `Button` (variant `primary|secondary|ghost|danger`, size `md|sm`, `icon`, `disabled`), `IconButton`, `Input` (label, `error`), `MaskedInput` (ver abaixo), `Dropdown`, `Toggle`.
 - **Indicadores:** `Badge` (tone `neutral|success|warning|danger|info`), `EmptyState`.
 - **Navegação:** `Sidebar` (aceita `children` para os indicadores de plano), `SidebarNavItem`, `PlanUsageCard`, `UpgradeCard`, `Tab`, `FilterTab`, `Pagination`.
 - **Conteúdo:** `PageHeader`, `Table` (colunas e linhas por props), `OrderCard`, `CategoryCard`, `MesaCard`, `AccordionHeader`.
 - **Sobreposições:** `ModalContainer` (só o painel, sem fundo escurecido), `ConfirmationModal`.
+
+### Máscaras de campos
+- Campo de telefone, CPF, CNPJ, CEP, data ou valor em reais usa `MaskedInput` com `mask="phone|cpf|cnpj|cep|date|currency"`, nunca um `Input` com máscara feita à mão. Sem biblioteca: a lógica fica em `app/lib/masks.ts` (formato, valor sem formatação e validação de cada máscara).
+- O campo mostra o valor formatado e guarda o valor sem formatação: só dígitos (telefone, CPF, CNPJ, CEP), data em ISO `aaaa-mm-dd` (vazio se incompleta ou inválida) e valor em texto decimal `1234.56`. Receba-o em `onValueChange(rawValue, { formatted, valid })` ou use a prop `name`, que cria um campo oculto com o valor sem formatação para enviar no formulário.
+- O erro ("CPF incompleto", "Data inválida" etc.) aparece ao sair do campo ou quando o campo é preenchido por completo; `required` mostra "Campo obrigatório". Para uma nova máscara, adicione-a em `maskConfigs` e a `MaskType`, e mostre-a em `/preview`.
 
 Não estão no código: o card de plano Premium, o `RefreshTimer` e o alternador de tema da sidebar (o modo escuro segue o sistema).
 

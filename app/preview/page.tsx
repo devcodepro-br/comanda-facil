@@ -22,6 +22,7 @@ import Table from "@/app/components/Table";
 import Tab from "@/app/components/Tab";
 import Toggle from "@/app/components/Toggle";
 import UpgradeCard from "@/app/components/UpgradeCard";
+import MaskedFieldsDemo from "./_components/MaskedFieldsDemo";
 
 interface SectionProps {
   title: string;
@@ -130,6 +131,10 @@ export default function Preview() {
         <Variant label="disabled" className="w-70">
           <Input label="E-mail" placeholder="Indisponível" disabled />
         </Variant>
+      </Section>
+
+      <Section title="MaskedInput">
+        <MaskedFieldsDemo />
       </Section>
 
       <Section title="Dropdown">
