@@ -10,12 +10,12 @@ interface InputProps extends Omit<ComponentProps<"input">, "size"> {
 
 const labelSizes: Record<NonNullable<InputProps["size"]>, string> = {
   md: "text-xs font-semibold text-text-secondary",
-  lg: "text-base font-semibold text-text-primary",
+  lg: "text-sm font-semibold text-text-primary",
 };
 
 const fieldSizes: Record<NonNullable<InputProps["size"]>, string> = {
   md: "px-3.5 py-3 text-sm leading-5",
-  lg: "px-4.5 py-3.5 text-lg leading-7",
+  lg: "px-4 py-2.5 text-base leading-6",
 };
 
 const fieldStates: Record<"default" | "error", string> = {

@@ -56,7 +56,7 @@ export default function LoginForm() {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form noValidate onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div role="group" aria-labelledby="document-type-label" className="flex flex-col gap-1.5">
         <span
           id="document-type-label"
@@ -64,7 +64,7 @@ export default function LoginForm() {
         >
           Tipo de Documento
         </span>
-        <div className="flex gap-3 sm:gap-4">
+        <div className="flex gap-3">
           {documentTypes.map((type) => (
             <FilterTab
               key={type.value}
@@ -103,10 +103,10 @@ export default function LoginForm() {
         onChange={(event) => setPassword(event.target.value)}
       />
 
-      <div className="flex flex-col gap-3 pt-3">
+      <div className="flex flex-col gap-3">
         <Button
           type="submit"
-          size="lg"
+          size="md"
           label={pending ? "Acessando..." : "Acessar"}
           disabled={pending}
           className="w-full"
